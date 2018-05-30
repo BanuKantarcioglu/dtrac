@@ -1,0 +1,39 @@
+
+<h1>All Personnel</h1>
+
+<%= will_paginate %>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Personnel No</th>
+    <th>Job Description</th>
+    <th >
+
+    </th>
+  </tr>
+
+
+  <% @personnels.each do |p| %>
+    <tr>
+      <td>
+        <%= link_to p.name, edit_personnel_path(p) %>
+      </td>
+      <td>
+        <%= p.pno%>
+      </td>
+      <td>
+        <%=p.jobdescription %>
+      </td>
+      <td>
+      <%= link_to 'Documents', '#' %>
+      </td>
+      
+    </tr>
+
+    </li>
+  <% end %>
+</table>
+
+<%= will_paginate %>

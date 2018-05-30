@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@personnel)  do |form| %>
+    <%= render 'shared/error_messages' %>
+
+      <p>
+        <%= form.label "Name" %><br>
+        <%= form.text_field :name, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= form.label "Personnel No" %><br>
+        <%= form.text_field :pno, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= form.label "Job Desciption" %><br>
+        <%= form.text_field :jobdescription , class: 'form-control'%>
+      </p>
+
+      <p>
+        <%= form.label "Active " %>     <%= form.check_box :status, class: 'form-control' %>
+      </p>
+      <p>
+        <%= form.submit "Save Card", class: "btn btn-primary"%>
+      </p>
+    <% end %>
+  </div>
+</div>
