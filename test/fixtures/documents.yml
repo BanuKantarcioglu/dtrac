@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  startdate: 2018-05-31
+  enddate: 2018-05-31
+  status: 1
+  personnel: one
+
+two:
+  name: MyString
+  startdate: 2018-05-31
+  enddate: 2018-05-31
+  status: 1
+  personnel: two

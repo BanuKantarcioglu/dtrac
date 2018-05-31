@@ -1,1 +1,76 @@
-<%= @personnel.name%>, <%= @personnel.pno%>,<%= @personnel.jobdescription%>,<%= @personnel.status%>
+<p>
+  <%= @personnel.name%>, <%= @personnel.pno%>,<%= @personnel.jobdescription%>,<%= @personnel.status%>
+</p>
+
+<h2>Documents :</h2>
+<table>
+  <th>
+    Document Name
+  </th>
+  <th>
+    Start Date
+  </th>
+  <th>
+    End Date
+  </th>
+  <th>
+    Status
+  </th>
+  <th colspan="2">
+    Actions
+  </th>
+
+  <% @personnel.documents.each do |document| %>
+    <tr>
+      <td>
+        <%= document.name %>
+      </td>
+      <td>
+        <%= document.startdate %>
+      </td>
+      <td>
+        <%= document.enddate %>
+      </td>
+      <td>
+        <%= document.status %>
+      </td>
+      <td>
+        <%#= link_to 'Edit Document', [document.personnel, document],
+                 method: :edit %>
+
+      <%= link_to 'Delete Document', [document.personnel, document],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+       </td>
+    </tr>
+  <% end %>
+
+</table>
+
+
+<h2>Add a Document:</h2>
+<%= form_with(model: [ @personnel, @personnel.documents.build ], local: true) do |form| %>
+  <%= render 'shared/error_messages' %>
+<%#= form_for [ @personnel, @document ] do |form| %>
+  <p>
+    <%= form.label 'Document Name' %><br>
+    <%= form.select :name, options_for_select(["","Work Permit","Visa","Document XY36","Some other document"]) %>
+    <%#= form.text_field :name,class: 'form-control' %>
+  </p>
+  <p>
+    <%= form.label 'Start Date' %><br>
+    <%= form.text_field :startdate,class: 'form-control' %>
+  </p>
+  <p>
+    <%= form.label 'End Date' %><br>
+    <%= form.text_field :enddate,class: 'form-control' %>
+  </p>
+  <p>
+    <%= form.label 'Status' %><br>
+    <%= form.text_field :status,class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.submit "Add Document", class: "btn btn-primary" %>
+  </p>
+<% end %>

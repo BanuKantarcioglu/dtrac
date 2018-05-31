@@ -4,7 +4,7 @@
 <%= will_paginate %>
 
 <%= form_tag(personnels_path, method: :get) do %>
-  <%= text_field_tag :searchterm, params[:searchterm] %>
+  <%= text_field_tag :searchterm, params[:searchterm],class: 'form-control' %>
   <%= submit_tag 'Search by Name', name: nil  %>
 <% end %>
 
@@ -35,7 +35,7 @@
         <%=p.status %>
       </td>
       <td>
-        <%= link_to 'Documents', '#'  if p.status%>
+        <%= link_to 'Documents ' + p.documents.count.to_s , personnel_path(p)  if p.status%>
       </td>
 
     </tr>
