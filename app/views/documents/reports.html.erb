@@ -1,0 +1,26 @@
+<h1><%= @myheader%></h1>
+
+<table>
+  <tr>
+    <th>Personnel Name</th>
+    <th>Document Name</th>
+    <th>Due Date</th>
+
+  </tr>
+
+
+  <% @documents.each do |d| %>
+    <tr>
+      <td>
+        <%= d.personnel.name %>
+      </td>
+      <td>
+        <%= d.name%>
+      </td>
+      <td>
+        <%= d.enddate.strftime("%d/%m/%Y") %>
+      </td>
+
+    </tr>
+  <% end %>
+</table>

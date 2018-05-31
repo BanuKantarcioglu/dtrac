@@ -26,10 +26,10 @@
         <%= document.name %>
       </td>
       <td>
-        <%= document.startdate %>
+        <%= document.startdate.strftime("%d/%m/%Y") %>
       </td>
       <td>
-        <%= document.enddate %>
+        <%= document.enddate.strftime("%d/%m/%Y") %>
       </td>
       <td>
         <%= document.status %>

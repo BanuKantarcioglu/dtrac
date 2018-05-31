@@ -20,11 +20,11 @@
                 Reports <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Past Dates", '#' %></li>
-                <li><%= link_to "Due in a week", '#' %></li>
+                <li><%= link_to "Past Due", pastdue_path %></li>
+                <li><%= link_to "Due in a month", duesoon_path %></li>
                 <li class="divider"></li>
                 <li>
-                  <%= link_to "All Personnel" , '#' %>
+                  <%= link_to "All Active Personnel" , plist_path %>
                 </li>
               </ul>
             </li>

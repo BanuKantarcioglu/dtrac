@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Personnel No</th>
+    <th>Job Description</th>
+
+  </tr>
+
+
+  <% @personnels.each do |p| %>
+    <tr>
+      <td>
+        <%= p.name %>
+      </td>
+      <td>
+        <%= p.pno%>
+      </td>
+      <td>
+        <%=p.jobdescription %>
+      </td>
+
+    </tr>
+  <% end %>
+</table>

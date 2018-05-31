@@ -42,6 +42,11 @@ class PersonnelsController < ApplicationController
     end
   end
 
+  def activelist
+    @personnels  = Personnel.where('status = ?',true)
+    render 'activelist'
+  end
+
   private
   def personnel_params
     params.require(:personnel).permit(:name, :pno, :jobdescription,:status,:searchterm)
