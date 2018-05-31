@@ -3,13 +3,18 @@
 
 <%= will_paginate %>
 
+<%= form_tag(personnels_path, method: :get) do %>
+  <%= text_field_tag :searchterm, params[:searchterm] %>
+  <%= submit_tag 'Search by Name', name: nil  %>
+<% end %>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Personnel No</th>
     <th>Job Description</th>
-    <th >
+    <th>Active</th>
+    <th>
 
     </th>
   </tr>
@@ -27,9 +32,12 @@
         <%=p.jobdescription %>
       </td>
       <td>
-      <%= link_to 'Documents', '#' %>
+        <%=p.status %>
       </td>
-      
+      <td>
+        <%= link_to 'Documents', '#'  if p.status%>
+      </td>
+
     </tr>
 
     </li>

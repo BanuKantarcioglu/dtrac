@@ -1,7 +1,11 @@
 class PersonnelsController < ApplicationController
 
   def index
-    @personnels = Personnel.paginate(page: params[:page])
+    @personnels  = if params[:searchterm]
+        Personnel.where('name LIKE ?', "%#{params[:searchterm]}%").order('status DESC').paginate(page: params[:page])
+      else
+        Personnel.paginate(page: params[:page])
+      end
   end
 
   def show
@@ -40,6 +44,6 @@ class PersonnelsController < ApplicationController
 
   private
   def personnel_params
-    params.require(:personnel).permit(:name, :pno, :jobdescription,:status)
+    params.require(:personnel).permit(:name, :pno, :jobdescription,:status,:searchterm)
   end
 end
