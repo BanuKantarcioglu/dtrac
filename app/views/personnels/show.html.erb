@@ -32,7 +32,9 @@
         <%= document.enddate.strftime("%d/%m/%Y") %>
       </td>
       <td>
-        <%= document.status %>
+        <%#= byebug %>
+        <%= ([["",0],["initial",1],["processing",2],["closed",3]])[document.status][0] %>
+
       </td>
       <td>
         <%#= link_to 'Edit Document', [document.personnel, document],
@@ -69,7 +71,8 @@
   </p>
   <p>
     <%= form.label 'Status' %><br>
-    <%= form.text_field :status,class: 'form-control' %>
+    <%#= form.text_field :status,class: 'form-control' %>
+    <%= form.select :status , options_for_select([["",0],["initial",1],["processing",2],["closed",3]])%>
   </p>
 
   <p>

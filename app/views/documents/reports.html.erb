@@ -5,7 +5,7 @@
     <th>Personnel Name</th>
     <th>Document Name</th>
     <th>Due Date</th>
-
+    <th>Status  </th>
   </tr>
 
 
@@ -21,6 +21,9 @@
         <%= d.enddate.strftime("%d/%m/%Y") %>
       </td>
 
+      <td>
+        <%= ([["",0],["initial",1],["processing",2],["closed",3]])[d.status][0] %>
+      </td>
     </tr>
   <% end %>
 </table>
