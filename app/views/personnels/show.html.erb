@@ -54,16 +54,18 @@
 <%#= form_for [ @personnel, @document ] do |form| %>
   <p>
     <%= form.label 'Document Name' %><br>
-    <%= form.select :name, options_for_select(["","Work Permit","Visa","Document XY36","Some other document"]) %>
+    <%= form.select :name , options_for_select(["","Work Permit","Visa","Document XY36","Some other document"])%>
     <%#= form.text_field :name,class: 'form-control' %>
   </p>
   <p>
     <%= form.label 'Start Date' %><br>
-    <%= form.text_field :startdate,class: 'form-control' %>
+    <%#= form.text_field :startdate,class: 'form-control' %>
+    <%= form.text_field :startdate, class: 'form-control','data-behaviour' => 'datepicker'  %>
   </p>
   <p>
     <%= form.label 'End Date' %><br>
-    <%= form.text_field :enddate,class: 'form-control' %>
+    <%#= form.text_field :enddate,class: 'form-control' %>
+    <%= form.text_field :enddate, class: 'form-control','data-behaviour' => 'datepicker'  %>
   </p>
   <p>
     <%= form.label 'Status' %><br>
