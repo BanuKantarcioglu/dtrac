@@ -10,7 +10,7 @@
 
 
   <% @documents.each do |d| %>
-    <tr>
+    <tr class=<%= cycle("odd","even")%>>
       <td>
         <%= d.personnel.name %>
       </td>

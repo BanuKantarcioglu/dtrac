@@ -8,7 +8,7 @@
 
 
   <% @personnels.each do |p| %>
-    <tr>
+    <tr class= <%= cycle("odd","even")%>>
       <td>
         <%= p.name %>
       </td>

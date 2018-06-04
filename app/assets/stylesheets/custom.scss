@@ -61,6 +61,15 @@ p {
 td{
   padding-right:  2em;
 }
+tr{
+  border-bottom: 1px solid $gray-medium-light;
+}
+tr.odd{
+  background-color: inherit;
+}
+tr.even{
+  background-color: $gray-medium-light;
+}
 
 /* header */
 
